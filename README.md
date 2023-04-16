@@ -1,4 +1,5 @@
-## Hyperledger Fabric是一个企业级的区块链平台，它使用智能合约作为其核心组件之一。下面是Hyperledger Fabric智能合约开发的一般流程：
+Hyperledger Fabric是一个企业级的区块链平台，它使用智能合约作为其核心组件之一。
+## 下面是Hyperledger Fabric智能合约开发的一般流程：
 
 ### 1.确定需求和设计智能合约：
     在开始Hyperledger Fabric智能合约开发之前，您需要与客户或利益相关者沟通，了解他们的需求，并根据这些需求设计智能合约。
