@@ -1,0 +1,11 @@
+{
+  "index": {
+    "fields": [
+      "docType",
+      "uuid"
+    ]
+  },
+  "ddoc": "FruitDoc",
+  "name": "IndexFruitDoc",
+  "type": "json"
+}
