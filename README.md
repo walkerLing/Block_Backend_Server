@@ -1,5 +1,17 @@
 # 本仓库代码是该项目智能合约的开发及部署文件。本智能合约的开发基于Hyperledger Fabric，一个企业级的区块链平台，他使用智能合约作为其核心组件之一。
 
+## 仓库文件功能索引：
+| 文件名  | 文件功能  |
+|---|---|
+| model/fruit.go  |  果实溯源智能合约结构体定义  |
+| fruitcc.tar.gz  | 智能合约应用打包部署的压缩包  |
+| main.go  | 项目主入口  |
+| go.mod  |   |
+| go.sum  |   |
+| handler/base.go  |   |
+| handler/fruit.go  |   |
+| META-INF/../fruit.json  |   |
+
 ## 智能合约开发流程：
 
 ### 1.确定需求和设计智能合约：
@@ -23,17 +35,6 @@
 ### 7.验证智能合约：
     检查智能合约是否执行正确，并且交易已被正确处理。
 
-## 仓库文件功能索引：
-| 文件名  | 文件功能  |
-|---|---|
-| model/fruit.go  |  果实溯源智能合约结构体定义  |
-| fruitcc.tar.gz  | 智能合约应用打包部署的压缩包  |
-| main.go  | 项目主入口  |
-| go.mod  |   |
-| go.sum  |   |
-| handler/base.go  |   |
-| handler/fruit.go  |   |
-| META-INF/../fruit.json  |   |
 
 
 
