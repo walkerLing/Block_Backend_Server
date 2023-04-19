@@ -1,0 +1,227 @@
+name: fruitaff
+x-type: hlfv1
+version: 1.0.0
+client:
+  organization: enter01org
+  logging:
+    level: info
+  tlsCerts:
+    client:
+      key:
+        pem: |
+          -----BEGIN PRIVATE KEY-----
+          MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgAuyLEq64csRPlAVk
+          cEp4oyRL2tHcQnZYNENHRQKRCg6hRANCAATILD1L0Dsg2kj/5T1N7VrnYEUTOYXY
+          X7C1OXV9TJgnC3+VyeOceozWiefPvUpu0zZQX5AdK5BhdpMVLsT6lhWj
+          -----END PRIVATE KEY-----
+      cert:
+        pem: |
+          -----BEGIN CERTIFICATE-----
+          MIICmDCCAj6gAwIBAgIQenLAf8y1PsjZytS30Ld0cDAKBggqhkjOPQQDAjCBrjEL
+          MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+          bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMS0wKwYDVQQKEyRlbnRlcjAxb3JnLmZy
+          dWl0YWZmLmhyLm1pbmdwYWludC5jb20xMzAxBgNVBAMTKnRsc2NhLmVudGVyMDFv
+          cmcuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNvbTAeFw0yMzAyMjQwNzQxMDBaFw0z
+          MzAyMjEwNzQxMDBaMH8xCzAJBgNVBAYTAkNOMREwDwYDVQQIEwhTaGFuZG9uZzER
+          MA8GA1UEBxMIUWluZyBEYW8xFTATBgNVBAkTDEppbnNodWkgcm9hZDEzMDEGA1UE
+          AwwqQWRtaW5AZW50ZXIwMW9yZy5mcnVpdGFmZi5oci5taW5ncGFpbnQuY29tMFkw
+          EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEyCw9S9A7INpI/+U9Te1a52BFEzmF2F+w
+          tTl1fUyYJwt/lcnjnHqM1onnz71KbtM2UF+QHSuQYXaTFS7E+pYVo6NsMGowDgYD
+          VR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNV
+          HRMBAf8EAjAAMCsGA1UdIwQkMCKAING6JSSoFOpUeNqfFC5JNkpzSZBunkjmrn4e
+          c7kMAFIHMAoGCCqGSM49BAMCA0gAMEUCIQCcYoj++bcVjtTMIQNBAbt9IU+Lhn7Y
+          5gVPPbVasgUZogIgUegfmETm6gH9ZYZxjOJ41MxceSSs8hvLvyhoZCafon8=
+          -----END CERTIFICATE-----
+    systemCertPool: false
+  credentialStore:
+    path: /tmp/state-store
+    cryptostore:
+      path: /tmp/msp
+channels:
+  channel01:
+    orderers:
+    - orderer0.fruitaff.hr.mingpaint.com
+    - orderer1.fruitaff.hr.mingpaint.com
+    - orderer2.fruitaff.hr.mingpaint.com
+    peers:
+      peer0.enter01org.fruitaff.hr.mingpaint.com:
+        endorsingPeer: true
+        chaincodeQuery: true
+        ledgerQuery: true
+        eventSource: true
+organizations:
+  enter01org:
+    mspid: Enter01orgMSP
+    cryptoPath: ""
+    users:
+      Admin:
+        cert:
+          pem: |
+            -----BEGIN CERTIFICATE-----
+            MIIChzCCAi6gAwIBAgIRANCa1mWEwMw7xTUnISWiphswCgYIKoZIzj0EAwIwgasx
+            CzAJBgNVBAYTAkNOMREwDwYDVQQIEwhTaGFuZG9uZzERMA8GA1UEBxMIUWluZyBE
+            YW8xFTATBgNVBAkTDEppbnNodWkgcm9hZDEtMCsGA1UEChMkZW50ZXIwMW9yZy5m
+            cnVpdGFmZi5oci5taW5ncGFpbnQuY29tMTAwLgYDVQQDEydjYS5lbnRlcjAxb3Jn
+            LmZydWl0YWZmLmhyLm1pbmdwYWludC5jb20wHhcNMjMwMjI0MDc0MTAwWhcNMzMw
+            MjIxMDc0MTAwWjCBjzELMAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREw
+            DwYDVQQHEwhRaW5nIERhbzEVMBMGA1UECRMMSmluc2h1aSByb2FkMQ4wDAYDVQQL
+            EwVhZG1pbjEzMDEGA1UEAwwqQWRtaW5AZW50ZXIwMW9yZy5mcnVpdGFmZi5oci5t
+            aW5ncGFpbnQuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEn2DdT4SyQ9l9
+            7w26puuI9ZemAUXgdEjzEMkzgzXpkkskSaNDFwIe3vrtgf9jPLoLk97omINvSZ3R
+            FhUBeONwmKNNMEswDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0j
+            BCQwIoAguc0TGzvi3A6VTQNyC2rBdW+ZnNsbz9l+FsvB2fqB/6YwCgYIKoZIzj0E
+            AwIDRwAwRAIgW9x2p9dgKw0nOytWBiHFz7NK5HrQiPgQnsNMJkX1mmICIF7N0u8h
+            VkGbvKP9onsnaZz0ui3GvcV1TlXqaZfNRZ2S
+            -----END CERTIFICATE-----
+        key:
+          pem: |
+            -----BEGIN PRIVATE KEY-----
+            MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgExsjUHsnPxfTU+gL
+            VnTg+5Sz1UFoBoIMFggb4dRPIV2hRANCAASfYN1PhLJD2X3vDbqm64j1l6YBReB0
+            SPMQyTODNemSSyRJo0MXAh7e+u2B/2M8uguT3uiYg29JndEWFQF443CY
+            -----END PRIVATE KEY-----
+    peers:
+    - peer0.enter01org.fruitaff.hr.mingpaint.com
+    certificateAuthorities:
+    - ca0.fruitaff.hr.mingpaint.com
+orderers:
+  orderer0.fruitaff.hr.mingpaint.com:
+    url: orderer0.fruitaff.hr.mingpaint.com:7060
+    grpcOptions: {}
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICnTCCAkOgAwIBAgIQC53VOr3/S/wJdS1XGW4JqzAKBggqhkjOPQQDAjCBmDEL
+        MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+        bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMSIwIAYDVQQKExlmcnVpdGFmZi5oci5t
+        aW5ncGFpbnQuY29tMSgwJgYDVQQDEx90bHNjYS5mcnVpdGFmZi5oci5taW5ncGFp
+        bnQuY29tMB4XDTIzMDIyNDA3NDEwMFoXDTMzMDIyMTA3NDEwMFowgZgxCzAJBgNV
+        BAYTAkNOMREwDwYDVQQIEwhTaGFuZG9uZzERMA8GA1UEBxMIUWluZyBEYW8xFTAT
+        BgNVBAkTDEppbnNodWkgcm9hZDEiMCAGA1UEChMZZnJ1aXRhZmYuaHIubWluZ3Bh
+        aW50LmNvbTEoMCYGA1UEAxMfdGxzY2EuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNv
+        bTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKLvmNcsnhQ4eZH0hknHQdhe+OaD
+        hqIccXO0QBbNU2wYT+OFIwT+lA0DrU1EyLzNni/SylACDqyVwDHS82d97GqjbTBr
+        MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEw
+        DwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgntAHGRuQEDbaEu7E+B6bcGKJ8D/E
+        hh9kzndckghqpuIwCgYIKoZIzj0EAwIDSAAwRQIgJ8wW+7adbasERV7y4wDSxD9L
+        CcXpkGEcghpeoFV2Li0CIQDP5h5uP6URxSBHloAMQykmtlfWubFfU3v+RhQf+O+Q
+        ig==
+        -----END CERTIFICATE-----
+  orderer1.fruitaff.hr.mingpaint.com:
+    url: orderer1.fruitaff.hr.mingpaint.com:7060
+    grpcOptions: {}
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICnTCCAkOgAwIBAgIQC53VOr3/S/wJdS1XGW4JqzAKBggqhkjOPQQDAjCBmDEL
+        MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+        bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMSIwIAYDVQQKExlmcnVpdGFmZi5oci5t
+        aW5ncGFpbnQuY29tMSgwJgYDVQQDEx90bHNjYS5mcnVpdGFmZi5oci5taW5ncGFp
+        bnQuY29tMB4XDTIzMDIyNDA3NDEwMFoXDTMzMDIyMTA3NDEwMFowgZgxCzAJBgNV
+        BAYTAkNOMREwDwYDVQQIEwhTaGFuZG9uZzERMA8GA1UEBxMIUWluZyBEYW8xFTAT
+        BgNVBAkTDEppbnNodWkgcm9hZDEiMCAGA1UEChMZZnJ1aXRhZmYuaHIubWluZ3Bh
+        aW50LmNvbTEoMCYGA1UEAxMfdGxzY2EuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNv
+        bTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKLvmNcsnhQ4eZH0hknHQdhe+OaD
+        hqIccXO0QBbNU2wYT+OFIwT+lA0DrU1EyLzNni/SylACDqyVwDHS82d97GqjbTBr
+        MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEw
+        DwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgntAHGRuQEDbaEu7E+B6bcGKJ8D/E
+        hh9kzndckghqpuIwCgYIKoZIzj0EAwIDSAAwRQIgJ8wW+7adbasERV7y4wDSxD9L
+        CcXpkGEcghpeoFV2Li0CIQDP5h5uP6URxSBHloAMQykmtlfWubFfU3v+RhQf+O+Q
+        ig==
+        -----END CERTIFICATE-----
+  orderer2.fruitaff.hr.mingpaint.com:
+    url: orderer2.fruitaff.hr.mingpaint.com:7060
+    grpcOptions: {}
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICnTCCAkOgAwIBAgIQC53VOr3/S/wJdS1XGW4JqzAKBggqhkjOPQQDAjCBmDEL
+        MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+        bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMSIwIAYDVQQKExlmcnVpdGFmZi5oci5t
+        aW5ncGFpbnQuY29tMSgwJgYDVQQDEx90bHNjYS5mcnVpdGFmZi5oci5taW5ncGFp
+        bnQuY29tMB4XDTIzMDIyNDA3NDEwMFoXDTMzMDIyMTA3NDEwMFowgZgxCzAJBgNV
+        BAYTAkNOMREwDwYDVQQIEwhTaGFuZG9uZzERMA8GA1UEBxMIUWluZyBEYW8xFTAT
+        BgNVBAkTDEppbnNodWkgcm9hZDEiMCAGA1UEChMZZnJ1aXRhZmYuaHIubWluZ3Bh
+        aW50LmNvbTEoMCYGA1UEAxMfdGxzY2EuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNv
+        bTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABKLvmNcsnhQ4eZH0hknHQdhe+OaD
+        hqIccXO0QBbNU2wYT+OFIwT+lA0DrU1EyLzNni/SylACDqyVwDHS82d97GqjbTBr
+        MA4GA1UdDwEB/wQEAwIBpjAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwEw
+        DwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgntAHGRuQEDbaEu7E+B6bcGKJ8D/E
+        hh9kzndckghqpuIwCgYIKoZIzj0EAwIDSAAwRQIgJ8wW+7adbasERV7y4wDSxD9L
+        CcXpkGEcghpeoFV2Li0CIQDP5h5uP6URxSBHloAMQykmtlfWubFfU3v+RhQf+O+Q
+        ig==
+        -----END CERTIFICATE-----
+peers:
+  peer0.enter01org.fruitaff.hr.mingpaint.com:
+    url: peer0.enter01org.fruitaff.hr.mingpaint.com:7061
+    grpcOptions: {}
+    tlsCACerts:
+      pem: |
+        -----BEGIN CERTIFICATE-----
+        MIICyTCCAm+gAwIBAgIQbrP6L5wdn4Nvy5Ix3vmMkTAKBggqhkjOPQQDAjCBrjEL
+        MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+        bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMS0wKwYDVQQKEyRlbnRlcjAxb3JnLmZy
+        dWl0YWZmLmhyLm1pbmdwYWludC5jb20xMzAxBgNVBAMTKnRsc2NhLmVudGVyMDFv
+        cmcuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNvbTAeFw0yMzAyMjQwNzQxMDBaFw0z
+        MzAyMjEwNzQxMDBaMIGuMQswCQYDVQQGEwJDTjERMA8GA1UECBMIU2hhbmRvbmcx
+        ETAPBgNVBAcTCFFpbmcgRGFvMRUwEwYDVQQJEwxKaW5zaHVpIHJvYWQxLTArBgNV
+        BAoTJGVudGVyMDFvcmcuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNvbTEzMDEGA1UE
+        AxMqdGxzY2EuZW50ZXIwMW9yZy5mcnVpdGFmZi5oci5taW5ncGFpbnQuY29tMFkw
+        EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6eP5ToQAEUiydUUFN6ey+OvaZ4M1FAEH
+        04FtcgCRKIi9LIxKbVVq+TR9UR/aW1kSvab9EfR7bp3v5LzHoPN+oqNtMGswDgYD
+        VR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNV
+        HRMBAf8EBTADAQH/MCkGA1UdDgQiBCDRuiUkqBTqVHjanxQuSTZKc0mQbp5I5q5+
+        HnO5DABSBzAKBggqhkjOPQQDAgNIADBFAiEAr1sw11u0l70DzAQoguWMdj9yQ+Nr
+        JHItw4mm+8C2oAQCIHzeHXW15cSARuDiJn3PG4NWMdO7PLLWEbwc0r96K6m/
+        -----END CERTIFICATE-----
+certificateAuthorities:
+  ca0.fruitaff.hr.mingpaint.com:
+    url: https://ca0.fruitaff.hr.mingpaint.com:7064
+    grpcOptions: {}
+    tlsCACerts:
+      pem:
+      - |
+        -----BEGIN CERTIFICATE-----
+        MIICyTCCAm+gAwIBAgIQbrP6L5wdn4Nvy5Ix3vmMkTAKBggqhkjOPQQDAjCBrjEL
+        MAkGA1UEBhMCQ04xETAPBgNVBAgTCFNoYW5kb25nMREwDwYDVQQHEwhRaW5nIERh
+        bzEVMBMGA1UECRMMSmluc2h1aSByb2FkMS0wKwYDVQQKEyRlbnRlcjAxb3JnLmZy
+        dWl0YWZmLmhyLm1pbmdwYWludC5jb20xMzAxBgNVBAMTKnRsc2NhLmVudGVyMDFv
+        cmcuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNvbTAeFw0yMzAyMjQwNzQxMDBaFw0z
+        MzAyMjEwNzQxMDBaMIGuMQswCQYDVQQGEwJDTjERMA8GA1UECBMIU2hhbmRvbmcx
+        ETAPBgNVBAcTCFFpbmcgRGFvMRUwEwYDVQQJEwxKaW5zaHVpIHJvYWQxLTArBgNV
+        BAoTJGVudGVyMDFvcmcuZnJ1aXRhZmYuaHIubWluZ3BhaW50LmNvbTEzMDEGA1UE
+        AxMqdGxzY2EuZW50ZXIwMW9yZy5mcnVpdGFmZi5oci5taW5ncGFpbnQuY29tMFkw
+        EwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6eP5ToQAEUiydUUFN6ey+OvaZ4M1FAEH
+        04FtcgCRKIi9LIxKbVVq+TR9UR/aW1kSvab9EfR7bp3v5LzHoPN+oqNtMGswDgYD
+        VR0PAQH/BAQDAgGmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAPBgNV
+        HRMBAf8EBTADAQH/MCkGA1UdDgQiBCDRuiUkqBTqVHjanxQuSTZKc0mQbp5I5q5+
+        HnO5DABSBzAKBggqhkjOPQQDAgNIADBFAiEAr1sw11u0l70DzAQoguWMdj9yQ+Nr
+        JHItw4mm+8C2oAQCIHzeHXW15cSARuDiJn3PG4NWMdO7PLLWEbwc0r96K6m/
+        -----END CERTIFICATE-----
+      path: ""
+      client:
+        key: {}
+        cert: {}
+    registrar:
+      enrollId: admin
+      enrollSecret: adminpw
+    caName: ca0.fruitaff.hr.mingpaint.com
+entityMatchers:
+  peer:
+  - pattern: (\w*)peer0.enter01org.fruitaff.hr.mingpaint.com(\w*)
+    urlSubstitutionExp: peer0.enter01org.fruitaff.hr.mingpaint.com:7061
+    sslTargetOverrideUrlSubstitutionExp: peer0.enter01org.fruitaff.hr.mingpaint.com
+    mappedHost: peer0.enter01org.fruitaff.hr.mingpaint.com
+  orderer:
+  - pattern: (\w*)orderer0.fruitaff.hr.mingpaint.com(\w*)
+    urlSubstitutionExp: orderer0.fruitaff.hr.mingpaint.com:7060
+    sslTargetOverrideUrlSubstitutionExp: orderer0.fruitaff.hr.mingpaint.com
+    mappedHost: orderer0.fruitaff.hr.mingpaint.com
+  - pattern: (\w*)orderer1.fruitaff.hr.mingpaint.com(\w*)
+    urlSubstitutionExp: orderer1.fruitaff.hr.mingpaint.com:7060
+    sslTargetOverrideUrlSubstitutionExp: orderer1.fruitaff.hr.mingpaint.com
+    mappedHost: orderer1.fruitaff.hr.mingpaint.com
+  - pattern: (\w*)orderer2.fruitaff.hr.mingpaint.com(\w*)
+    urlSubstitutionExp: orderer2.fruitaff.hr.mingpaint.com:7060
+    sslTargetOverrideUrlSubstitutionExp: orderer2.fruitaff.hr.mingpaint.com
+    mappedHost: orderer2.fruitaff.hr.mingpaint.com
